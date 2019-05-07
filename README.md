@@ -42,7 +42,10 @@ export smtplogin=SMTP_LOGIN
 export smtppass=SMTP_PASSWORD
 /usr/bin/sendEmail -f $smtpemailfrom -t $zabbixemailto -u $zabbixsubject \-m $zabbixbody -s $smtpserver:25  -o tls=no \-o message-content-type=html 
 ```
-
+4b. Change script execution permission
+```
+chmod ugo+x /usr/lib/zabbix/alertscripts/html_email.sh
+```
 5. Login to your Zabbix GUI and go to Administration -> Media Types -> Email
 
 6. Change type to Script and put 'html_email.sh' into script name.
